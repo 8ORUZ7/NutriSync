@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Meal = require('../models/Meal');
+const { Meal } = require('../models/Schedule');
+const activityController = require('../controllers/activityController');
 
+// CRUD for Meal
 router.post('/', async (req, res) => {
   const meal = new Meal(req.body);
   await meal.save();
@@ -23,62 +25,17 @@ router.put('/:id', async (req, res) => {
   res.send(meal);
 });
 
-router.post('/:id/activity', async (req, res) => {
-  const meal = await Meal.findById(req.params.id);
-  if (!meal) {
-    return res.status(404).send('Meal not found');
-  }
-  meal.activities.push(req.body);
-  await meal.save();
-  res.send(meal);
-});
+// Activities
+router.post('/:id/activity', activityController.addActivity(Meal));
+router.get('/:id/activity', activityController.getActivities(Meal));
+router.delete('/:id/activity/:activityId', activityController.deleteActivity(Meal));
+router.get('/:id/activity/:activityId', activityController.getActivity(Meal));
+router.put('/:id/activity/:activityId', activityController.updateActivity(Meal));
 
-router.get('/:id/activity', async (req, res) => {
-  const meal = await Meal.findById(req.params.id);
-  res.send(meal.activities);
-});
-
-router.delete('/:id/activity/:activityId', async (req, res) => {
-  const meal = await Meal.findById(req.params.id);
-  if (!meal) {
-    return res.status(404).send('Meal not found');
-  }
-  meal.activities = meal.activities.filter((activity) => activity.id !== req.params.activityId);
-  await meal.save();
-  res.status(204).send();
-});
-
-router.get('/:id/activity/:activityId', async (req, res) => {
-  const meal = await Meal.findById(req.params.id);
-  const activity = meal.activities.find((activity) => activity.id === req.params.activityId);
-  res.send(activity);
-});
-
-router.put('/:id/activity/:activityId', async (req, res) => {
-  const meal = await Meal.findById(req.params.id);
-  if (!meal) {
-    return res.status(404).send('Meal not found');
-  }
-  const activity = meal.activities.find((activity) => activity.id === req.params.activityId);
-  if (!activity) {
-    return res.status(404).send('Activity not found');
-  }
-  activity.set(req.body);
-  await meal.save();
-  res.send(activity);
-});
-
-router.delete('/:id/activity/:activityId', async (req, res) => {
-  const meal = await Meal.findById(req.params.id);
-  if (!meal) {
-    return res.status(404).send('Meal not found');
-  }
-  meal.activities = meal.activities.filter((activity) => activity.id !== req.params.activityId);
-  await meal.save();
-  res.status(204).send();
-});
-
+// Plans (if used for meals)
+router.get('/:id/activity/:activityId/plan', activityController.getPlans(Meal));
+router.post('/:id/activity/:activityId/plan', activityController.addPlan(Meal));
+router.put('/:id/activity/:activityId/plan', activityController.updatePlan(Meal));
+router.delete('/:id/activity/:activityId/plan', activityController.deletePlan(Meal));
 
 module.exports = router;
-
-  
