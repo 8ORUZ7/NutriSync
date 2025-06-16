@@ -1,3 +1,9 @@
+> **suggestion**: the title of this repository will be changed as suggested and should be made unique.
+features must be realistic and attainable.
+the ui/ux design should be flexible and user-friendly, particularly for the older generation.
+
+---
+
 # NutriSync: AI-Powered Wellness Scheduler
 
 **Description**: NutriSync is a smart web/mobile app that helps users with chronic conditions (like ulcers or Crohn's disease), spiritual fasting (Ramadan), or health goals (like better cardiovascular performance or mindfulness) schedule and track their meals, breathing, and meditation based on circadian rhythm, medical timing, and AI-generated insights. 
