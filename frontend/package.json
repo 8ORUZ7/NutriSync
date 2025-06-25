@@ -1,0 +1,28 @@
+{
+  "name": "toku-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@mui/material": "^5.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-router-dom": "^6.0.0",
+    "axios": "^0.21.1",
+    "chart.js": "^3.0.0",
+    "react-chartjs-2": "^3.0.0",
+    "i18next": "^21.0.0",
+    "react-i18next": "^11.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^11.0.0",
+    "@testing-library/jest-dom": "^5.0.0"
+  }
+}
