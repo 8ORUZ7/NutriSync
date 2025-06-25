@@ -1,88 +1,38 @@
-> **suggestion**: the title of this repository will be changed as suggested and should be made unique.
-features must be realistic and attainable.
-the ui/ux design should be flexible and user-friendly, particularly for the older generation.
+##  **status:** 🚧 this application is currently under construction
 
----
+### toku overview
+- toku is an ai-powered wellness platform designed to help individuals manage chronic digestive conditions (like ulcers or crohn’s), observe spiritual fasting (such as during ramadan), and improve cardiovascular and mindfulness health.
+- the platform combines novita ai with the mern stack (mongodb, express, react, node.js) to deliver realistic, attainable, and personalized wellness schedules. it follows circadian rhythm science and religious practices, with an interface designed to be flexible and easy to use—especially for older users.
 
-# NutriSync: AI-Powered Wellness Scheduler
+### features
+#### smart eating scheduler
+  - personalized meal timing for chronic digestive conditions
+  - fasting schedule reminders (e.g., suhoor and iftar)
+  - digestion-aware and blood sugar-friendly recommendations
+  - syncing with local sunrise/sunset and prayer times
 
-**Description**: NutriSync is a smart web/mobile app that helps users with chronic conditions (like ulcers or Crohn's disease), spiritual fasting (Ramadan), or health goals (like better cardiovascular performance or mindfulness) schedule and track their meals, breathing, and meditation based on circadian rhythm, medical timing, and AI-generated insights. 
+#### mindful breathing & meditation coach
+  - real-time breathing reminders and techniques (e.g., box breathing)
+  - optional breath tracking via microphone or smart device
+  - meditation prompts after meals or during stress periods
 
-## Features
-- Smart Eating Scheduler
-- Mindful Breath and Meditation
-- Heart and Gut Health Insights
-- Daily Sync Mode
+#### heart & gut health companion
+  - food suggestions for heart and gut health (anti-inflammatory, low cholesterol)
+  - breath-hold and lung capacity exercises
+  - stress and gut trigger tracking with adaptive recommendations
 
-## Tech Stack
-- **Frontend**: React
-- **Backend**: Node.js + Express
-- **AI**: Novita AI / local LLM for meal plan & wellness suggestions
-- **Database**: MongoDB (Mongoose)
-- **APIs & Tools**:
-  - Nutrition API (e.g., Edamam, Spoonacular)
-  - Prayer/fasting time APIs (e.g., Aladhan API)
-  - Breathing rate estimation from microphone (Web Audio API)
-  - Cron-style scheduler for reminders
+#### daily sync calendar
+  - customizable calendar combining medical, spiritual, and wellness routines
+  - reminders for meals, fasting, breathing, and meditation
+  - flexible and senior-friendly interface design
 
----
-
-## Getting Started
-
-### Prerequisites
-- Node.js and npm
-- MongoDB installed and running (or MongoDB Atlas)
-- Novita AI API Key
-
-### Clone the Repo
-```bash
-git clone https://github.com/8ORUZ7/NutriSync.git
-cd NutriSync
-```
-
-### Install Backend Dependencies
-```bash
-cd server
-npm install
-```
-
-### Create .env
-```
-MONGO_URI=your_mongodb_connection
-NOVITA_API_KEY=
-```
-
-### Start Backend Server
-```bash
-npm run dev
-```
-
-### Install Frontend Dependencies
-```bash
-cd ../client
-npm install
-```
-
-### Start React App
-```bash
-npm start
-```
----
-
-## API Endpoints
-
-### Users
-- `POST /api/users/register` → Register new user
-- `GET /api/users/:id` → Get user info
-
-### Meals
-- `POST /api/meals` → Log a meal
-- `GET /api/meals/:userId` → Get meals by user
-
-### Schedules
-- `POST /api/schedules` → Add schedule item
-- `GET /api/schedules/:userId` → Get schedule by user
-
-### AI
-- `POST /api/ai/mealplan` → Generate AI-powered meal plan
-
+### tech stack
+**frontend:** react.js, chart.js, responsive and accessible ui
+**backend:** node.js, express (restful api architecture)
+**ai engine:** novita ai or local llm for personalized recommendations
+**database:** mongodb (user profiles, activity logs, schedules)
+**additional tools & apis:**
+  - nutrition api (e.g., edamam, spoonacular)
+  - aladhan api (prayer times)
+  - web audio api (breath monitoring)
+  - cron-style scheduler for reminders
